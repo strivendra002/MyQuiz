@@ -5,7 +5,7 @@
   "main": "server.js",
   "engines": {
     "node": "22.x",
-    "npm":"10.3.0"
+    "npm":"10.x"
   },
   "scripts": {
     "test": "echo \"Error:  no test specifed\" && exit 1",
