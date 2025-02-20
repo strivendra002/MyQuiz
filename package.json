@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "21.1.0",
+    "node": "22.x",
     "npm":"10.3.0"
   },
   "scripts": {
