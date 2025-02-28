@@ -1,14 +1,6 @@
-import axios from "axios";
+import axiosInstance from "./axiosInstance";
 
-const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000/api",
-});
-
-const token = localStorage.getItem("token");
-if (token) {
-  axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-}
-
+// Register User
 export const registerUser = async (payload) => {
   try {
     const response = await axiosInstance.post("/users/register", payload);
@@ -18,19 +10,19 @@ export const registerUser = async (payload) => {
   }
 };
 
+// Login User
 export const loginUser = async (payload) => {
   try {
     const response = await axiosInstance.post("/users/login", payload);
     localStorage.setItem("token", response.data.token);
-    axiosInstance.defaults.headers.common[
-      "Authorization"
-    ] = `Bearer ${response.data.token}`;
+    axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
     return { success: true, data: response.data }; // Return an object with success status and data
   } catch (error) {
     throw error;
   }
 };
 
+// Get User Info
 export const getUserInfo = async () => {
   try {
     const response = await axiosInstance.post("/users/get-user-info");

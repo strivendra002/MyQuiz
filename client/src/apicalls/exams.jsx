@@ -1,102 +1,81 @@
-const { default: axiosInstance } = require(".");
+import axiosInstance from "./axiosInstance";
 
-// add exam
-
+// Add Exam
 export const addExam = async (payload) => {
   try {
-    const response = await axiosInstance.post("/api/exams/add", payload);
+    const response = await axiosInstance.post("/exams/add", payload);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
 };
 
-// get all exams
+// Get All Exams
 export const getAllExams = async () => {
   try {
-    const response = await axiosInstance.post("/api/exams/get-all-exams");
+    const response = await axiosInstance.post("/exams/get-all-exams");
     return response.data;
   } catch (error) {
     return error.response.data;
   }
 };
 
-// get exam by id
-
+// Get Exam by ID
 export const getExamById = async (payload) => {
   try {
-    const response = await axiosInstance.post(
-      "/api/exams/get-exam-by-id",
-      payload
-    );
+    const response = await axiosInstance.post("/exams/get-exam-by-id", payload);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
 };
 
-// edit exam by id
-
+// Edit Exam by ID
 export const editExamById = async (payload) => {
   try {
-    const response = await axiosInstance.post(
-      "/api/exams/edit-exam-by-id",
-      payload
-    );
+    const response = await axiosInstance.post("/exams/edit-exam-by-id", payload);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
 };
 
-// delete exam by id
-
+// Delete Exam by ID
 export const deleteExamById = async (payload) => {
   try {
-    const response = await axiosInstance.post(
-      "/api/exams/delete-exam-by-id",
-      payload
-    );
+    const response = await axiosInstance.post("/exams/delete-exam-by-id", payload);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
 };
 
-// add question to exam
-
+// Add Question to Exam
 export const addQuestionToExam = async (payload) => {
   try {
-    const response = await axiosInstance.post(
-      "/api/exams/add-question-to-exam",
-      payload
-    );
+    const response = await axiosInstance.post("/exams/add-question-to-exam", payload);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
 };
 
+// Edit Question by ID
 export const editQuestionById = async (payload) => {
   try {
-    const response = await axiosInstance.post(
-      "/api/exams/edit-question-in-exam",
-      payload
-    );
+    const response = await axiosInstance.post("/exams/edit-question-in-exam", payload);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
 };
 
+// Delete Question by ID
 export const deleteQuestionById = async (payload) => {
   try {
-    const response = await axiosInstance.post(
-      "/api/exams/delete-question-in-exam",
-      payload
-    );
+    const response = await axiosInstance.post("/exams/delete-question-in-exam", payload);
     return response.data;
   } catch (error) {
     return error.response.data;
   }
-}
+};

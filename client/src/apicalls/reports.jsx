@@ -1,31 +1,31 @@
-const { default: axiosInstance } = require(".");
+import axiosInstance from "./axiosInstance";
 
-// add report
+// Add Report
 export const addReport = async (payload) => {
-    try {
-        const response = await axiosInstance.post("/api/reports/add-report", payload);
-        return response.data;
-    } catch (error) {
-        return error.response.data;
-    }
-}
+  try {
+    const response = await axiosInstance.post("/reports/add-report", payload);
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
 
-// get all reports
+// Get All Reports
 export const getAllReports = async (filters) => {
-    try {
-        const response = await axiosInstance.post("/api/reports/get-all-reports" , filters);
-        return response.data;
-    } catch (error) {
-        return error.response.data;
-    }
-} 
+  try {
+    const response = await axiosInstance.post("/reports/get-all-reports", filters);
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
 
-// get all reports by user
+// Get All Reports by User
 export const getAllReportsByUser = async () => {
-    try {
-        const response = await axiosInstance.post("/api/reports/get-all-reports-by-user");
-        return response.data;
-    } catch (error) {
-        return error.response.data;
-    }
-}
+  try {
+    const response = await axiosInstance.post("/reports/get-all-reports-by-user");
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
