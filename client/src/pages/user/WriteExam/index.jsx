@@ -123,7 +123,7 @@ function WriteExam() {
           />
         )}
 
-        {view === "questions" && (
+        {view === "questions" && questions[selectedQuestionIndex] && (
           <div className="flex flex-col gap-2">
             <div className="flex justify-between">
               <h1 className="text-2xl">
